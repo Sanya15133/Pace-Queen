@@ -1,6 +1,6 @@
 exports.getActivities = async (req, res, next) => {
   try {
-    const activities = fetchActivities();
+    const activities = await fetchActivities();
     if (activities.length === 0) {
       console.log("No activities");
     }
@@ -11,9 +11,9 @@ exports.getActivities = async (req, res, next) => {
 };
 
 exports.getActivityById = async (req, res, next) => {
+  const id = req.params;
   try {
-    const id = req.params;
-    const activity = fetchAticityById(id);
+    const activity = await fetchAtivityById(id);
     if (!activity) {
       console.log("No activity found");
     }
