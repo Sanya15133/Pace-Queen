@@ -9,3 +9,16 @@ exports.getActivities = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getActivityById = async (req, res, next) => {
+  try {
+    const id = req.params;
+    const activity = fetchAticityById(id);
+    if (!activity) {
+      console.log("No activity found");
+    }
+    res.status(200).send({ activity });
+  } catch (err) {
+    next(err);
+  }
+};
