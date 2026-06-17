@@ -1,3 +1,16 @@
+const { status } = require("express/lib/response");
+const { User } = require("../models/user-model");
+
+exports.registerUser = async (req, res, next) => {
+  try {
+    const { username, email, password, cycle } = req.body;
+    const user = await User.registerUser(username, email, password, cycle);
+    (res, status(201).send({ user }));
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.getUsers = async (req, res, next) => {
   try {
     const users = await fetchUsers();
