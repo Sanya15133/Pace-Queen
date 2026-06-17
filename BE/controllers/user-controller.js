@@ -5,7 +5,17 @@ exports.registerUser = async (req, res, next) => {
   try {
     const { username, email, password, cycle } = req.body;
     const user = await User.registerUser(username, email, password, cycle);
-    (res, status(201).send({ user }));
+    res.status(201).send({ user });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.logInUser = async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    const user = await User.loginUser(username, password);
+    res.status(201).send({ user });
   } catch (err) {
     next(err);
   }
