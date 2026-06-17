@@ -28,10 +28,16 @@ export class User {
   }
   static async fetchUsers() {
     const result = await db.query("SELECT * FROM users;");
+    if (!result) {
+      console.log("No users found");
+    }
     return result.rows;
   }
   static async fetchUserById(id) {
     const result = await db.query("SELECT * FROM users WHERE id = $1", [id]);
+    if (!result) {
+      console.log("No user found");
+    }
     return result.rows[0];
   }
 }
