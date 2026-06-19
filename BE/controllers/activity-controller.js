@@ -13,11 +13,24 @@ exports.getActivities = async (req, res, next) => {
 exports.getActivityById = async (req, res, next) => {
   const id = req.params;
   try {
-    const activity = await fetchAtivityById(id);
+    const activity = await fetchActivityById(id);
     if (!activity) {
       console.log("No activity found");
     }
     res.status(200).send({ activity });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getActivityByCategoryID = async (req, res, next) => {
+  const id = req.params;
+  try {
+    const activities = await fetchActivityByCategoryid(id);
+    if (!activties) {
+      console.log("No activities found for that category");
+    }
+    res.status(200).send({ activities });
   } catch (err) {
     next(err);
   }
