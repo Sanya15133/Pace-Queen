@@ -15,4 +15,14 @@ export class Category {
     }
     return result.rows[0];
   }
+  static async fetchActivitiesByCategoryID(id) {
+    const result = await db.query(
+      "SELECT * FROM activities WHERE category_id = $1;",
+      [id],
+    );
+    if (!result) {
+      console.log("No activities for that category ");
+    }
+    return result.rows;
+  }
 }
