@@ -35,3 +35,25 @@ exports.getActivityByCategoryID = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.getActivityInfoToPost = async (req, res, next) => {
+  const { name, type, description, duration, distance, category_id, user_id } =
+    req.body;
+  try {
+    const activity = await postActivity(
+      name,
+      type,
+      description,
+      duration,
+      distance,
+      category_id,
+      user_id,
+    );
+    if (!activity) {
+      console.log("All requirements needed for post");
+    }
+    res.status(201).send(activity);
+  } catch (err) {
+    next(err);
+  }
+};
