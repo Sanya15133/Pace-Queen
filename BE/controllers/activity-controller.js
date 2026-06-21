@@ -57,3 +57,17 @@ exports.getActivityInfoToPost = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.patchActivity = async (req, res, next) => {
+  const { duration, distance } = req.body;
+  const id = req.params;
+  try {
+    const activity = await editActivity(id, { duration, distance });
+    if (!activity) {
+      console.log("Need duration/distance for patch request");
+    }
+    res.status(201).send({ activity });
+  } catch (err) {
+    next(err);
+  }
+};
