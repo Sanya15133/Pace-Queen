@@ -2,7 +2,11 @@
 
 PhysTech-2026 Submission
 
-# How to run this on your local machine
+## Media and assets credits
+
+1. Flaticon (hqrloveq): https://www.flaticon.com/free-icon/crown_14034774
+
+## How to run this on your local machine
 
 Fork the repo
 
