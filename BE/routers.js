@@ -26,3 +26,5 @@ router.get("/users/:id", getUserById);
 router.get("/categories", getCategories);
 router.get("/categories/:id", getCategoryById);
 router.get("/categories/activities/:id", getActivityByCategoryID);
+
+module.exports = router
