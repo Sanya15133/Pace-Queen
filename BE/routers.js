@@ -3,6 +3,8 @@ const {
   getActivities,
   getActivityById,
   getActivityByCategoryID,
+  getActivityInfoToPost,
+  patchActivity,
 } = require("./controllers/activity-controller");
 const {
   registerUser,
@@ -17,14 +19,15 @@ const {
 const router = express.Router();
 
 router.get("/activites", getActivities);
+router.post("/activites", getActivityInfoToPost);
 router.get("/activities/:id", getActivityById);
-router.get("/activities/categories/:id", getActivitiesByCategoryID);
-router.get("/register", registerUser);
-router.get("/login", logInUser);
+router.patch("/activities/:id", patchActivity);
+router.post("/register", registerUser);
+router.post("/login", logInUser);
 router.get("/users", getUsers);
 router.get("/users/:id", getUserById);
 router.get("/categories", getCategories);
 router.get("/categories/:id", getCategoryById);
 router.get("/categories/activities/:id", getActivityByCategoryID);
 
-module.exports = router
+module.exports = router;
