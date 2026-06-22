@@ -3,3 +3,5 @@ const app = express();
 const router = require("./routers");
 
 app.use("/", router);
+
+module.exports = app;

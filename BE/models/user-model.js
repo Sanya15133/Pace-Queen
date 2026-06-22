@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 
-export class User {
+class User {
   static async registerUser({ username, email, password, cycle }) {
     const hashedPassword = await bcrypt.hash(password, 11);
     const user = await db.query(
@@ -41,3 +41,5 @@ export class User {
     return result.rows[0];
   }
 }
+
+module.exports = { User };
