@@ -1,4 +1,4 @@
-export class Activity {
+class Activity {
   static async fetchActivities() {
     const result = await db.query("SELECT * FROM activities;");
     if (!result) {
@@ -37,3 +37,5 @@ export class Activity {
     return this.fetchActivityById(id);
   }
 }
+
+module.exports = { Activity };

@@ -1,4 +1,4 @@
-export class Category {
+class Category {
   static async fetchAllCategories() {
     const result = await db.query("SELECT * FROM categories;");
     if (!result) {
@@ -26,3 +26,5 @@ export class Category {
     return result.rows;
   }
 }
+
+module.exports = { Category };
