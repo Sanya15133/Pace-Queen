@@ -45,6 +45,8 @@ header {
   padding: 0.5em 7em;
   gap: 2em;
   width: 100%;
+  border-bottom: 1px solid var(--pink-light);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
 .logo-img {
@@ -92,8 +94,9 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 80%;
-  padding: 2em 1em;
+  width: 70%;
+  padding: 1em;
+  margin: 1em;
   gap: 1em;
   font-family: "Cormorant Garamond", serif;
   font-weight: 400;
