@@ -1,6 +1,6 @@
 const endpointsObj = require('../endpoints.json')
 const request = require('supertest')
-const app = require('../app.js')
+const app = require('../../app.js')
 const expectCookies = require('supertest/lib/cookies')
 
 /* 
