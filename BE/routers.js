@@ -18,6 +18,10 @@ const {
 } = require("./controllers/category-controller");
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  res.render("index", { title: "Home" });
+});
+
 router.get("/activites", getActivities);
 router.post("/activites", getActivityInfoToPost);
 router.get("/activities/:id", getActivityById);
