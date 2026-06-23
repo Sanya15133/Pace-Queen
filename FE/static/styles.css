@@ -30,3 +30,15 @@ body {
   align-items: center;
   background-color: var(--pink-light);
 }
+
+a {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
