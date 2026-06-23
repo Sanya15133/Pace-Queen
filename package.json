@@ -1,0 +1,32 @@
+{
+  "name": "pace-queen",
+  "version": "1.0.0",
+  "description": "PhysTech-2026 Submission",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "overrides": {
+    "js-yaml": "^4.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sanya15133/Pace-Queen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Sanya15133/Pace-Queen/issues"
+  },
+  "homepage": "https://github.com/Sanya15133/Pace-Queen#readme",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14",
+    "path": "^0.12.7"
+  }
+}
