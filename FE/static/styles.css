@@ -28,17 +28,50 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--pink-light);
-}
-
-a {
-  font-family: "Cormorant Garamond", serif;
-  font-weight: 400;
-  font-style: normal;
+  background-color: var(--primary-white);
 }
 
 h1 {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-style: normal;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+  gap: 2em;
+  width: 100%;
+}
+
+.logo-img {
+  height: 15rem;
+  width: auto;
+}
+
+/* Navbar */
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75em;
+}
+
+nav > a {
+  text-decoration: none;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.25em;
+  letter-spacing: 3px;
+  color: var(--primary-dark);
+}
+
+nav > a:hover {
+  text-decoration: underline var(--green-dark) wavy;
 }
