@@ -43,3 +43,16 @@ const getUser = async (id) => {
     console.log(err, "error");
   }
 };
+
+const getUsers = async () => {
+  try {
+    const { data } = await api.get("/users");
+
+    if (data.length === 0) {
+      console.log("No users found");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "error");
+  }
+};
