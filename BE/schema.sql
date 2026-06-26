@@ -19,7 +19,7 @@ CREATE TABLE activities (
     category_id INTEGER NOT NULL,
     name TEXT NOT NULL,
     description TEXT NOT NULL,
-    distance INTEGER,
-    FOREIGN KEY (user_id) REFERENCES users(id),
-    FOREIGN KEY (category_id) REFERENCES categories(id)
+    distance REAL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
