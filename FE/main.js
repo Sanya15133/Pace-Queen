@@ -70,9 +70,7 @@ const getActivities = async () => {
 
 const getActivityById = async (id) => {
   try {
-    const { data } = await api.get("/activities/:id", {
-      params: { id },
-    });
+    const { data } = await api.get(`/activities/${id}`);
     if (!data) {
       console.log("Activity cannot be found");
     }
@@ -82,16 +80,48 @@ const getActivityById = async (id) => {
   }
 };
 
-const postActivity = async (name, type, description, duration, distance, category_id, user_id) => {
+const postActivity = async (
+  name,
+  type,
+  description,
+  duration,
+  distance,
+  category_id,
+  user_id,
+) => {
   try {
-    const {data} = await api.post('/activities', {
-      name, type, description, duration, distance, category_id, user_id
-    })
+    const { data } = await api.post("/activities", {
+      name,
+      type,
+      description,
+      duration,
+      distance,
+      category_id,
+      user_id,
+    });
     if (!data) {
-      console.log('All parameters required')
+      console.log("All parameters required");
     }
-    return data
+    return data;
   } catch (err) {
-    console.log(err, 'error posting')
+    console.log(err, "error posting");
   }
-}
+};
+
+const editActivity = async (id, duration, distance) => {
+  try {
+    const { data } = await api.patch(`/activities/${id}`, {
+      duration,
+      distance,
+    });
+
+    if (!data) {
+      console.log("Activity cannot be updated");
+      return;
+    }
+
+    return data;
+  } catch (err) {
+    console.error("Error updating activity:", err);
+  }
+};
