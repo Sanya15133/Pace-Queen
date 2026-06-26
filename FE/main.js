@@ -125,3 +125,39 @@ const editActivity = async (id, duration, distance) => {
     console.error("Error updating activity:", err);
   }
 };
+
+const getCategories = async () => {
+  try {
+    const { data } = await api.get("/categories");
+    if (data.length === 0) {
+      console.log("No categories found");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "error getting categories");
+  }
+};
+
+const getCategoryById = async (id) => {
+  try {
+    const { data } = await api.get(`/categories/${id}`);
+    if (!data) {
+      console.log("No category found matching this id");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "error");
+  }
+};
+
+const getActivitiesByCategoryId = async (id) => {
+  try {
+    const { data } = await api.get(`/activities?category=${id}`);
+    if (data.length === 0) {
+      console.log("No activities found for that category");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "error");
+  }
+};
