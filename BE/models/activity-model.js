@@ -17,7 +17,6 @@ class Activity {
   }
   static async postActivity({
     name,
-    type,
     description,
     duration,
     distance,
@@ -25,8 +24,8 @@ class Activity {
     user_id,
   }) {
     const result = await db.query(
-      "INSERT NTO activities (name, type, description, duration, distance, category_id, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7 );",
-      [name, type, description, duration, distance, category_id, user_id],
+      "INSERT NTO activities (name, description, duration, distance, category_id, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7 );",
+      [name, description, duration, distance, category_id, user_id],
     );
   }
   static async editActivity(id, { duration, distance }) {
