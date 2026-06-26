@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "user_id": 1,
+    "category_id": 1,
+    "name": "Push-Up Routine",
+    "description": "Completed 3 sets of 15 push-ups at home.",
+    "distance": null
+  },
+  {
+    "id": 2,
+    "user_id": 1,
+    "category_id": 2,
+    "name": "Morning Run",
+    "description": "Ran around the local park.",
+    "distance": 5.2
+  },
+  {
+    "id": 3,
+    "user_id": 2,
+    "category_id": 1,
+    "name": "Yoga Session",
+    "description": "30-minute full-body yoga workout.",
+    "distance": null
+  },
+  {
+    "id": 4,
+    "user_id": 2,
+    "category_id": 2,
+    "name": "Cycling",
+    "description": "Evening bike ride through the countryside.",
+    "distance": 18.7
+  },
+  {
+    "id": 5,
+    "user_id": 3,
+    "category_id": 1,
+    "name": "HIIT Workout",
+    "description": "20-minute high-intensity interval training session.",
+    "distance": null
+  },
+  {
+    "id": 6,
+    "user_id": 3,
+    "category_id": 2,
+    "name": "Hiking",
+    "description": "Weekend hike on a forest trail.",
+    "distance": 9.4
+  }
+]
