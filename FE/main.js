@@ -32,7 +32,7 @@ const loginUser = async ({ username, password }) => {
 
 const getUser = async (id) => {
   try {
-    const { data } = await api.get("/users", {
+    const { data } = await api.get("/users/:id", {
       params: { id },
     });
     if (!data) {
@@ -47,7 +47,6 @@ const getUser = async (id) => {
 const getUsers = async () => {
   try {
     const { data } = await api.get("/users");
-
     if (data.length === 0) {
       console.log("No users found");
     }
@@ -56,3 +55,43 @@ const getUsers = async () => {
     console.log(err, "error");
   }
 };
+
+const getActivities = async () => {
+  try {
+    const { data } = await api.get("/activities");
+    if (data.length === 0) {
+      console.log("No activities found");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "error");
+  }
+};
+
+const getActivityById = async (id) => {
+  try {
+    const { data } = await api.get("/activities/:id", {
+      params: { id },
+    });
+    if (!data) {
+      console.log("Activity cannot be found");
+    }
+    return data;
+  } catch (err) {
+    console.log(err, "err");
+  }
+};
+
+const postActivity = async (name, type, description, duration, distance, category_id, user_id) => {
+  try {
+    const {data} = await api.post('/activities', {
+      name, type, description, duration, distance, category_id, user_id
+    })
+    if (!data) {
+      console.log('All parameters required')
+    }
+    return data
+  } catch (err) {
+    console.log(err, 'error posting')
+  }
+}
