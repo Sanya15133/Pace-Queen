@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 class User {
   static async registerUser({ username, email, password, cycle }) {
     const hashedPassword = await bcrypt.hash(password, 11);
+    
     const user = await db.query(
       "INSERT INTO users (username, email, password, cycle) VALUES ($1, $2, $3, $4)",
       [username, email, hashedPassword, cycle],
@@ -12,18 +13,21 @@ class User {
     const result = await db.query("SELECT * FROM users WHERE username = $1;", [
       username,
     ]);
+
     const user = result.rows[0];
-    if (!user) {
-      console.log("No user found");
+
+    if (user.length === 0) {
+      console.log("User cannot be found");
     }
-    const isPasswordMatch = bcrypt.compare(password, user.password);
+
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
+
     if (!isPasswordMatch) {
       console.log("Passwords do not match");
     }
     return {
       id: user.id,
       username: user.username,
-      password: user.password,
     };
   }
   static async fetchUsers() {

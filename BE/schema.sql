@@ -1,5 +1,5 @@
 CREATE TABLE users (
-    user_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     age INTEGER,
     email TEXT NOT NULL UNIQUE,
@@ -8,7 +8,18 @@ CREATE TABLE users (
 );
 
 CREATE TABLE categories (
-    category_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     description TEXT
+);
+
+CREATE TABLE activities (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    category_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    distance REAL,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
 );
