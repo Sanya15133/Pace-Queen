@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "age": 24,
+    "email": "alice@example.com",
+    "password": "password123",
+    "menstrual_cycle_phase": "Follicular"
+  },
+  {
+    "id": 2,
+    "name": "Beth Carter",
+    "age": 29,
+    "email": "beth@example.com",
+    "password": "password456",
+    "menstrual_cycle_phase": "Ovulation"
+  },
+  {
+    "id": 3,
+    "name": "Chloe Smith",
+    "age": 31,
+    "email": "chloe@example.com",
+    "password": "password789",
+    "menstrual_cycle_phase": "Luteal"
+  }
+]

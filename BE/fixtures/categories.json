@@ -1,0 +1,18 @@
+[
+  {
+    "model": "categories",
+    "pk": 1,
+    "fields": {
+      "name": "Home Workout",
+      "description": "Exercises that can be performed at home with little or no equipment."
+    }
+  },
+  {
+    "model": "categories",
+    "pk": 2,
+    "fields": {
+      "name": "Outdoor Workout",
+      "description": "Exercises and activities designed to be performed outdoors, such as running, hiking, or park workouts."
+    }
+  }
+]

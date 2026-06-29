@@ -139,3 +139,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+footer {
+  position: fixed;
+  padding-top: 100%;
+  bottom: 0;
+}
