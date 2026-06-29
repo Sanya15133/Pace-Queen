@@ -30,3 +30,9 @@ body {
   align-items: center;
   background-color: var(--pink-light);
 }
+
+footer {
+  position: fixed;
+  padding-top: 100%;
+  bottom: 0;
+}

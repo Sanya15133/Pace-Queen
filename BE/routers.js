@@ -22,7 +22,13 @@ router.get("/activites", getActivities);
 router.post("/activites", getActivityInfoToPost);
 router.get("/activities/:id", getActivityById);
 router.patch("/activities/:id", patchActivity);
+router.get("/register", (req, res) => {
+  res.render("register");
+});
 router.post("/register", registerUser);
+router.get("/login", (req, res) => {
+  res.render("login");
+});
 router.post("/login", logInUser);
 router.get("/users", getUsers);
 router.get("/users/:id", getUserById);

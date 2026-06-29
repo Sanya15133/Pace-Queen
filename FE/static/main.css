@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&display=swap");
+
+:root {
+  --pink-light: #d9b4c7;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pink-light);
+  font-family: "Cormorant Garamond", serif;
+}
+
+h1 {
+  font-family: "Great Vibes", cursive;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
